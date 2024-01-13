@@ -1,0 +1,13 @@
+package and package-lock keeps the track of configuration on the dependencies
+
+we want parcel to be our dev dependencie so we used the command "npm install -D parcel" while installing
+
+^ => caret -> for minor updates
+` => tilde -> for major updates
+updates automatically done
+
+no need of uploading node_modules to github => use .gitignore
+it will be automatically installed/regenerated using "npm install" since package.json and package-lock.json keeps track of all the dependencies
+
+npm is used to install the packages
+npx is used to run a particular package on a file
