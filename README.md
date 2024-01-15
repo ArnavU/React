@@ -67,3 +67,28 @@ all the code of parcel and its dependencies are downloaded in node_modeuls folde
 - HTTPs
 - Tree Shaking - remove unused code
 - Different dev and prod bundles
+
+<br>
+
+### Config-driven UI 
+All the UI is driven by config, the data is the config.
+The UI which is displayed is driven by the data coming from backend.
+We cannot build different food delivery app for differnt cities or countries.
+Eg.: different background for Delhi, Mumbai. 
+     differnt containers for differnt cities
+
+#### Two types of Export/Import
+
+- Default Export/Import
+ 
+export default Component ;
+import Component from "path";
+
+- Named Export/Import
+
+export constant Component;
+import {Component} from "path"
+
+#### Whenever state variable updates, the react rerenders the components 
+- state variables are super powerful variables 
+- react is good at DOM manipulation

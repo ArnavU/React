@@ -11,3 +11,16 @@ it will be automatically installed/regenerated using "npm install" since package
 
 npm is used to install the packages
 npx is used to run a particular package on a file
+
+
+--> What is CDN?
+
+CDN stands for Content Delivery Network. CDN links refer to the URLs or web addresses pointing to the resources (such as scripts, stylesheets, images, fonts, etc.) hosted on a Content Delivery Network. CDNs are a network of distributed servers that work together to provide fast and reliable delivery of web content to users based on their geographical location.
+
+Using CDN links for common libraries and frameworks has become a common practice in web development. Instead of hosting these resources on your own server, you can link to CDN-hosted versions. This has several advantages:
+
+Speed: CDNs have servers distributed worldwide, and users can load resources from a server that is geographically closer to them. This reduces latency and improves page load times.
+
+Caching: CDNs often have caching mechanisms, allowing users to reuse resources that have already been downloaded from the same CDN by other websites. This can further improve load times.
+
+Parallel Downloads: Browsers limit the number of simultaneous connections to a single domain. CDNs can serve resources from different domains, allowing for more parallel downloads and faster page rendering.  
