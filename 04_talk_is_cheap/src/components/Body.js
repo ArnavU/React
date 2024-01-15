@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const Body = () => {
     // Local State Variable -> Super powerful variable -> hooks
+    // listOfRestaurants is a state variable
     const [listOfRestaurants, setListOfRestaurant] = useState(resList);
     // array destructuring
 

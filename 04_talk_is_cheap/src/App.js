@@ -9,7 +9,7 @@ import Body from "./components/Body"
     - nav Items
 * body 
     - search
-    - Restaurantcontainer
+    - RestaurantContainer
         - RestaurantCards
             - Img
             - Name of Res, Star Rating, cuisine, delivery time

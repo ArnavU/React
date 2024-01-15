@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // traditional way
-// const header = React.createElement('h1', {id: "heading"}, "This is HTML from JSX");
+// const header = React.createElement('h1', {id: "heading"}, "This is HTML from react");
 
 // jsx is different from react
 // the jsx is is interpreted by the parcel in particular the babel transpiles it so that brwser can understand it

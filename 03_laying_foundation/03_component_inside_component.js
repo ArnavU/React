@@ -6,6 +6,8 @@ const title = (
     <h1>This is Namaste React 🚀</h1>
 )
 
+console.log(title);
+
 // this is react component
 const Title = () => (
     <h1>This is Namaste React 🚀</h1>
