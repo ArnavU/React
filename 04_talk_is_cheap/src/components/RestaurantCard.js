@@ -1,11 +1,12 @@
-import { CDN_URL } from "../utils.js/constants";
+import { CDN_URL } from "../utils/constants";
 
 const styleCard = {
   backgroundColor: "#f0f0f0",
+  textDecoration: "none"
 };
 
 const RestaurantCard = (props) => {
-  console.log(props.resData.info.name);
+  // console.log(props.resData.info.name);
 
   // we can even destructure the props
   const { resData } = props;

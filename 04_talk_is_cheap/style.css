@@ -1,6 +1,7 @@
 body {
     /* background-color: gray; */
     box-sizing: border-box;
+    margin: 0
 }
 
 .header {
@@ -8,6 +9,8 @@ body {
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .logo {
@@ -17,12 +20,39 @@ body {
 .nav-items ul{
     display: flex;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-items ul li {
     padding: 10px;
     margin: 10px;
     font-size: 24px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin: 20px 20px 0 20px; 
+}
+
+.search-box {
+    height: 20px;
+}
+
+.search {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.search-btn {
+    height: 25px;
+}
+
+.btn {
+    margin-right: 20px;
+    height: 50px;
+    width: 60px;
 }
 
 .res-container {
@@ -58,4 +88,202 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+.rectangleCards-container {
+    height: 100px;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* border: 2px solid black; */
+    padding: 20px;
+    margin: 0px;
+}
+
+.rectangle-card {
+    height: 50px;
+    width: 250px;
+    background-color: #f0f0f0;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.shimmer-card {
+    height: 450px;
+    width: 300px;
+    background-color: #f0f0f0;
+    border-radius: 2%;
+}
+
+.outlet-container {
+}
+
+.menue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menueCardList-container {
+    width: 70%;
+}
+
+.menueCard-header {
+    position: relative;
+    cursor: pointer;
+    background-color: orange;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.menueCard-header::before {
+    content: "-";
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    bottom: 16%;
+}
+
+.menueCard-header-afterToggle::before {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    bottom: 16%;
+}
+
+.menueCardList-container > h2 {
+    align-self: flex-start;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.menueCardList {
+    list-style: none;
+    padding-left: 10;
+}
+
+.menueCard {
+    /* display: flex; */
+    border-bottom: 2px solid rgb(201, 186, 186);
+    min-height: 150px;
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    background-color:#f0f0f0
+}
+
+.veg_bestseller {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bestseller::before{
+    content: "⭐ ";
+    font-size: 10px;
+}
+
+.bestseller {
+    font-size: 14px;
+    color: rgb(255, 170, 0);
+    font-weight: 800;
+}
+
+.description {
+    color: rgba(40, 44, 63, 0.721);
+    font-size: 14px;
+}
+
+.menueImg {
+    height: 100px;
+    width: 150px;
+}
+
+.imageVeg {
+    height: 10px;
+    width: 10px;
+    border: 2px solid green;
+    background-image: url(./src/utils/veg.png);
+    background-size: contain;
+    display: inline-block;
+}
+
+.imageNonVeg {
+    height: 10px;
+    width: 10px;
+    border: 2px solid red;
+    background-image: url(./src/utils/non-veg.png);
+    background-size: contain;
+    display: inline-block;
+}
+
+.menueCards {
+    transition: all 1s linear;
+}
+
+.menueCards_toggle {
+    height: 0px;
+    border: 2px solid green;
+    overflow: hidden;
+}
+
+.resNameLocation {
+    border: 2px solid red;
+    margin-top: 20px;
+    line-height: 25px;
+    padding: 10px;
+}
+
+.resName {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.delieveryTime {
+
+}
+
+.location {
+
+}
+
+.link-without-textDecoration {
+    text-decoration: none;
+    color: black;
+}
+
+.vegNonVeg-button {
+    height: 35px;
+    width: 120px;
+    background-color: red;
+    border-radius: 9px;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+.veg-button {
+    background-color: green;
+
+}
+
+.user-card {
+    border: 2px solid black;
 }
