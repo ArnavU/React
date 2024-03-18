@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 // const header = React.createElement('h1', {id: "heading"}, "This is HTML from react");
 
 // jsx is different from react
-// the jsx is is interpreted by the parcel in particular the babel transpiles it so that brwser can understand it
+// the jsx is is interpreted by the parcel in particular the babel transpiles it so that browser can understand it
 // babel is also a js compiler
 const jsxHeader = <h1 className='heading'>This is from jsx and my name is Arnav</h1> // => will be converted to react element
 

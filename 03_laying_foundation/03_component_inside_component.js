@@ -33,4 +33,4 @@ const HeadingComponent = () => (
 
 const root = ReactDOM.createRoot(document.querySelector('.root'));
 
-root.render(<HeadingComponent/>);
+root.render(HeadingComponent());

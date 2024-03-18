@@ -13,8 +13,7 @@ const RestaurantCard = (props) => {
   // otherwise use
   // <h3>{props.resData.info.name}</h3>
 
-  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
-    resData?.info;
+  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } = resData?.info;
 
   const { deliveryTime } = resData.info.sla;
 

@@ -1,59 +1,75 @@
 import React from "react";
+import useVegNonVegTag from "../utils/useVegNonVegTag";
+import useBestsellerTag from "../utils/useBestSellerTag";
+import useEachCardImage from "../utils/useEachCardImage";
+import { useState, useEffect } from "react";
 
 const MenueCards = (props) => {
-  const { card } = props;
+	const { card } = props;
+	const [list, setList] = useState([]);
+	
+	const [tempList, setTempList] = useState([]);
 
-  return (
-    <div className="menueCards">
-      {card.card.card.itemCards.map((ele) => {
-        return (
-          <div key={ele.card.info.id} className="menueCard">
+	useEffect(() => {
+		console.log("Use effect called");
+		
+		setList(card?.card?.card?.itemCards);
+		setTempList(card?.card?.card?.itemCards);
 
-            {/* ul contains the li seen on the left side of the card */}
-            <ul className="menueCardList">
-              <li className="veg_bestseller">
+		const filterVeg = () => {
+			setTempList( 				
+				card?.card?.card?.itemCards?.filter((ele) => {
+					return (
+						ele?.card?.info?.itemAttribute?.vegClassifier == "VEG"
+					);
+				})
+			);
+		};
 
-                {/* veg or non-veg */}
-                {(() => {
-                  if (ele.card.info.itemAttribute.vegClassifier == "VEG") {
-                    return <span className="imageVeg"></span>;
-                  } else {
-                    return <span className="imageNonVeg"></span>;
-                  }
-                })()}
-                
-                {/* Bestseller tag */}
-                {(() => {
-                  if (ele.card.info.isBestseller == true) {
-                    return <div className="bestseller">Bestseller</div>;
-                  }
-                })()}
-              </li>
-              <li>{ele.card.info.name}</li>
-              <li>₹ {ele.card.info.price / 100 || ele.card.info.defaultPrice / 100}</li>
-              <br />
-              <li className="description">{ele.card.info.description}</li>
-            </ul>
+		let buttonEle = document.querySelector(".vegNonVeg-button");
+		buttonEle.addEventListener("click", function (){
+			if (buttonEle.innerText == "Veg & Non-Veg") {
+				filterVeg();
+			} else {
+				setTempList(card?.card?.card?.itemCards);
+				// doubt => if "list" is used instead of "card?.card?.card?.itemCards" 
+				// then it will give incorrect result
+			}
+		});
+	}, []);
 
-            {/* Image of each card seen on the right side of the card */}
-            {(() => {
-              if (ele.card.info.imageId != null) {
-                return (
-                  <img
-                    className="menueImg"
-                    src={
-                      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-                      ele.card.info.imageId
-                    }
-                  />
-                );
-              }
-            })()}
-          </div>
-        );
-      })}
-    </div>
-  );
+	return (
+		<div className="menueCards">
+			{/* Optional chaining is imp */}
+
+			{tempList?.map((ele) => {
+				return (
+					<div key={ele?.card?.info?.id} className="menueCard">
+						{/* ul contains the li seen on the left side of the card */}
+						<ul className="menueCardList">
+							<li className="veg_bestseller">
+								{useVegNonVegTag(ele)}
+								{useBestsellerTag(ele)}
+							</li>
+							<li>{ele?.card?.info?.name}</li>
+							<li>
+								₹{" "}
+								{ele?.card?.info?.price / 100 ||
+									ele?.card?.info?.defaultPrice / 100}
+							</li>
+							<br />
+							<li className="description">
+								{ele?.card?.info?.description}
+							</li>
+						</ul>
+
+						{/* Image of each card seen on the right side of the card */}
+						{useEachCardImage(ele)}
+					</div>
+				);
+			})}
+		</div>
+	);
 };
 
 export default MenueCards;

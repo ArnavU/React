@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // let p = fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 // p.then((response) => {
@@ -21,7 +22,6 @@ const Body = () => {
   const [tempListOfRestaurants, setTempListOfRestaurants] = useState([]);
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-render the components)
-  console.log("Body rendered");
 
   useEffect(() => {
     console.log("useEffect called");
@@ -51,6 +51,12 @@ const Body = () => {
   };
 
   const [searchText, setSearchText] = useState("");
+
+  if(!useOnlineStatus()) {
+    return (
+      <h3>Looks like you have lost your internet connection</h3>
+    )
+  }
 
   // conditional rendering
   if (listOfRestaurants.length === 0) {
@@ -101,14 +107,6 @@ const Body = () => {
       </div>
 
       <div className="res-container">
-        {/* restaurantCards */}
-        {/* {RestaurantCard()} */}
-        {/* <RestaurantCard
-            resName="Meghana Foods"
-            cuisine="Biriyani, North Indian, Asian"
-          /> */}
-        {/* <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" /> */}
-
         {tempListOfRestaurants.map((restaurant) => {
           return (
             <Link to={"/restaurants/" + restaurant.info.id } key={restaurant.info.id} className="link-without-textDecoration"><RestaurantCard resData={restaurant} /></Link>

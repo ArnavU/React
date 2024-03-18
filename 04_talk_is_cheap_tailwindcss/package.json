@@ -1,0 +1,36 @@
+{
+	"name": "learning-react",
+	"version": "1.0.0",
+	"description": "Learning from the Namaste-React course by Akshay Saini",
+	"scripts": {
+		"test": "jest",
+		"start": "parcel ./index.html",
+		"build": "parcel build ./index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArnavU/learning-react.git"
+	},
+	"author": "Arnav Umarkar",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ArnavU/React/issues"
+	},
+	"homepage": "https://github.com/ArnavU/React#readme",
+	"devDependencies": {
+		"parcel": "^2.10.3",
+		"postcss": "^8.4.33",
+		"process": "^0.11.10",
+		"tailwindcss": "^3.4.1"
+	},
+	"dependencies": {
+		"@reduxjs/toolkit": "^2.0.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-redux": "^9.1.0",
+		"react-router-dom": "^6.21.2"
+	},
+	"browserslist": [
+		"last 2 versions"
+	]
+}

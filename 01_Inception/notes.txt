@@ -2,8 +2,9 @@ package and package-lock keeps the track of configuration on the dependencies
 
 we want parcel to be our dev dependencie so we used the command "npm install -D parcel" while installing
 
-^ => caret -> for minor updates
-` => tilde -> for major updates
+~ => tilde -> for patch-level updates
+^ => caret -> for major updates
+* => asteriks -> all the changes
 updates automatically done
 
 no need of uploading node_modules to github => use .gitignore
